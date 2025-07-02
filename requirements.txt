@@ -1,0 +1,17 @@
+﻿fastapi
+uvicorn
+python-multipart
+jinja2
+aiofiles
+llama-index-core
+llama-index-llms-groq
+llama-index-embeddings-huggingface
+llama-index-readers-file
+unstructured[pdf]
+pdfminer.six
+pypdf
+transformers
+torch
+sentence-transformers
+requests
+python-dotenv

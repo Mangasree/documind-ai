@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocuMind AI - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <i class="fas fa-brain"></i>
+            <span>DocuMind AI</span>
+        </div>
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('chat') }}">Document Q&A</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+        </div>
+    </nav>
+    
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>© 2025 DocuMind AI. All rights reserved.</p>
+    </footer>
+    
+    <!-- Load common JavaScript files -->
+    <script src="/static/js/chat.js"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

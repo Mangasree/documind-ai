@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Document Q&A{% endblock %}
+
+{% block content %}
+<div class="chat-container">
+    <div class="upload-section">
+        <h2>Upload Document</h2>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <div class="upload-box">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Drag & drop your file here</p>
+                <input type="file" id="fileInput" name="file" accept=".pdf,.docx,.txt" multiple>
+                <button type="submit" id="uploadBtn">Process Document</button>
+                <div id="uploadStatus"></div>
+            </div>
+        </form>
+    </div>
+
+    <div class="chat-section">
+        <div id="chatWindow">
+            <div class="ai-message">
+                Welcome to DocuMind AI! Upload a document to start asking questions.
+            </div>
+        </div>
+        
+        <form id="askForm">
+            <div class="input-area">
+                <textarea id="questionInput" name="query" placeholder="Ask your question..." required></textarea>
+                <button type="submit" id="askBtn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="/static/chat.js"></script>
+{% endblock %}
