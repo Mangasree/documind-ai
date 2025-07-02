@@ -1,19 +1,20 @@
+# Use Python base image
 FROM python:3.10
 
+# Set work directory
 WORKDIR /code
 
-# Install dependencies
+# Copy dependencies
 COPY requirements.txt .
+
+# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy app
-COPY app /code/app
+# Copy app files
+COPY . .
 
-# Expose frontend
-RUN mkdir -p /code/app/uploads
+# Expose default FastAPI port
+EXPOSE 7860
 
-# Env vars
-ENV PYTHONUNBUFFERED=1
-
-# Entrypoint
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "7860"]
+# Run the app with uvicorn
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "7860"]
