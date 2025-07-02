@@ -15,7 +15,7 @@ load_dotenv()
 
 # === App Setup ===
 app = FastAPI()
-UPLOAD_FOLDER = "app/uploads"
+UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # === Enable CORS (optional for frontend fetch) ===
