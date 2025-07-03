@@ -15,9 +15,10 @@
             <span>DocuMind AI</span>
         </div>
         <div class="nav-links">
-            <a href="{{ url_for('home') }}">Home</a>
-            <a href="{{ url_for('chat') }}">Document Q&A</a>
-            <a href="{{ url_for('contact') }}">Contact</a>
+            <a href="{{ request.url_for('home') }}" target="_top">Home</a>
+            <a href="{{ request.url_for('chat') }}" target="_top">Document Q&A</a>
+            <a href="{{ request.url_for('contact') }}" target="_top">Contact</a>
+
         </div>
     </nav>
     
