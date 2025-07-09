@@ -46,7 +46,7 @@ except Exception as e:
 
 # === Configure Embeddings ===
 try:
-    Settings.embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
+    Settings.embed_model = HuggingFaceEmbedding(model_name="sentence-transformers/all-MiniLM-L6-v2")
 except Exception as e:
     print(f"[ERROR] Embedding Init Failed: {e}")
     Settings.embed_model = None
