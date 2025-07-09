@@ -1,20 +1,21 @@
-# Use Python base image
 FROM python:3.10-slim
 
-# Set work directory
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
 WORKDIR /code
 
-# Copy dependencies
-COPY requirements.txt .
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libffi-dev \
+    libgl1 \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy app files
 COPY . .
 
-# Expose default FastAPI port
 EXPOSE 7860
-
-# Run the app with uvicorn
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "7860"]
