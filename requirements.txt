@@ -1,18 +1,22 @@
-﻿fastapi
-gunicorn
+# Web + Template Engine
+fastapi
 uvicorn
 python-multipart
 jinja2
 aiofiles
+requests
+python-dotenv
+
+# LlamaIndex Core
 llama-index-core
 llama-index-llms-groq
 llama-index-embeddings-huggingface
 llama-index-readers-file
+
+# PDF/Text Parsing
 unstructured[pdf]
 pdfminer.six
 pypdf
-transformers
-torch
+
+# Embeddings (Slimmed)
 sentence-transformers
-requests
-python-dotenv
